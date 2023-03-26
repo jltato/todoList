@@ -10,5 +10,7 @@ COPY ./ ./
 #Install dependencies
 RUN npm install 
 
+EXPOSE 3000
+
 #Default command
 CMD ["npm","start"]
