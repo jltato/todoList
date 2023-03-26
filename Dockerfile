@@ -1,16 +1,14 @@
-#Specify a base image
-FROM node:alpine
+# Use the official Node.js image as the base image
+FROM node:18
 
-#Specify a working directory
-WORKDIR /usr/app
+# Set the working directory in the container
+WORKDIR /app
 
-#Copy the project
-COPY ./ ./
+# Copy the application files into the working directory
+COPY . /app
 
-#Install dependencies
-RUN npm install 
+# Install the application dependencies
+RUN npm install
 
-EXPOSE 3000
-
-#Default command
-CMD ["npm","start"]
+# Define the entry point for the container
+CMD ["node", "app.js"]
